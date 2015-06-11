@@ -12,12 +12,36 @@
 		<intercept-url pattern="/**" access="ROLE_USER" />
 	</http>
 	
+<!-- 	<authentication-manager> -->
+<!-- 		<authentication-provider> -->
+<!-- 			<user-service> -->
+<!-- 				<user name="attila" password="attila" authorities="ROLE_USER"/> -->
+<!-- 				<user name="tibi" password="secret" authorities="ROLE_USER"/> -->
+<!-- 			</user-service> -->
+<!-- 		</authentication-provider> -->
+<!-- 	</authentication-manager> -->
+	
+	<!-- for jdbc connect -->
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="url" value="jdbc:mysql://localhost:3306/fitnesstracker" />
+		<beans:property name="username" value="root" />
+		<beans:property name="password" value="csoki" />
+	</beans:bean>
+	
+	<!-- 2 way to implement this: 1. -->
+	<beans:bean id="userDetailsService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+		<beans:property name="dataSource" ref="dataSource"/>
+	</beans:bean>
 	<authentication-manager>
-		<authentication-provider>
-			<user-service>
-				<user name="attila" password="attila" authorities="ROLE_USER"/>
-			</user-service>
-		</authentication-provider>
+		<authentication-provider user-service-ref="userDetailsService"/>			
 	</authentication-manager>
-
+	
+	<!-- 2. way => dont need the JdbcDaoImpl, and the auth-manager lookks like this -->
+<!-- 	<authentication-manager> -->
+<!-- 		<authentication-provider> -->
+<!-- 			<jdbc-user-service data-source-ref="dataSource"/> -->
+<!-- 		</authentication-provider> -->
+<!-- 	</authentication-manager> -->
+	
 </beans:beans>

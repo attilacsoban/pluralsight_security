@@ -32,18 +32,19 @@
 	</beans:bean>
 	
 	<!-- 2 way to implement this: 1. -->
-	<beans:bean id="userDetailsService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
-		<beans:property name="dataSource" ref="dataSource"/>
-	</beans:bean>
-	<authentication-manager>
-		<authentication-provider user-service-ref="userDetailsService"/>			
-	</authentication-manager>
+<!-- 	<beans:bean id="userDetailsService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl"> -->
+<!-- 		<beans:property name="dataSource" ref="dataSource"/> -->
+<!-- 	</beans:bean> -->
+<!-- 	<authentication-manager> -->
+<!-- 		<authentication-provider user-service-ref="userDetailsService"/>			 -->
+<!-- 	</authentication-manager> -->
 	
 	<!-- 2. way => dont need the JdbcDaoImpl, and the auth-manager lookks like this -->
-<!-- 	<authentication-manager> -->
-<!-- 		<authentication-provider> -->
-<!-- 			<jdbc-user-service data-source-ref="dataSource"/> -->
-<!-- 		</authentication-provider> -->
-<!-- 	</authentication-manager> -->
+	<authentication-manager>
+		<authentication-provider>
+		<password-encoder hash="bcrypt" />
+			<jdbc-user-service data-source-ref="dataSource"/>
+		</authentication-provider>
+	</authentication-manager>
 	
 </beans:beans>

@@ -22,11 +22,18 @@ public class LoginController {
 		return "login"; //ezutan a c: prefix div megjelenik, az error attributot beallitjuk
 	}
 	
+	//logout
 	@RequestMapping(value="/logout",method = RequestMethod.GET)
 	public String logout(){
 		System.out.println("entered logout() method");
 		
 		return "logout";
+	}
+	
+	//403 page
+	@RequestMapping(value="/403",method=RequestMethod.GET)
+	public String error403(Model model){
+		return "403";
 	}
 	
 	

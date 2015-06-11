@@ -92,16 +92,16 @@
 		web.xml servletdispatcher mappingja miatt		
 		-->	
 <!-- 	<http auto-config="true"> -->
+<!-- <intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>allow acces to login.html -->
 <!-- 		<intercept-url pattern="/**" access="ROLE_USER" /> -->
-<!-- 		<form-login login-page="/login.html"/> -->
-<!-- 		<intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>allow acces to login.html -->
+<!-- 		<form-login login-page="/login.html"/> -->		
 <!-- 	</http> -->
 		
 		
 	<http auto-config="true">
-		<intercept-url pattern="/**" access="ROLE_USER" />		
-		<form-login login-page="/login.html"/> 
 		<intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/**" access="ROLE_USER" />				
+		<form-login login-page="/login.html"/> 		
 	</http>
 		
 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

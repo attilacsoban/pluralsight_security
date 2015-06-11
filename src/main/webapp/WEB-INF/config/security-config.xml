@@ -11,6 +11,8 @@
 	<http auto-config="true">
 		<intercept-url pattern="/**" access="ROLE_USER" />
 	</http>
+	<!-- megprobalom rest-el osszehozni, pl a rest requestmapping jara belovom a patternt, es meglatom mi lesz
+	ha fel akarja keresni egy angularos kliens azt a linket... -->
 	
 <!-- 	<authentication-manager> -->
 <!-- 		<authentication-provider> -->

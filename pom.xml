@@ -90,7 +90,12 @@
 	    <version>3.2.6.RELEASE</version>
 	</dependency>
 	
-	
+	<!-- CSA needed cause: classnotfoundexception  springnamingpolicy-->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>3.2.6.RELEASE</version>
+	</dependency>
 	 
   </dependencies>
   <build>

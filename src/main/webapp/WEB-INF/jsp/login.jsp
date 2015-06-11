@@ -22,7 +22,7 @@
 	<h1>fittner tracker custom login page</h1>
 	<c:if test="${not empty error }">
 		<dir class="errorblock">
-<%-- 			Your login was unsuccessful. <br>caused by ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message } --%>
+ 			Your login was unsuccessful. <br>caused by ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message } 
 		</dir>
 	</c:if>
 	

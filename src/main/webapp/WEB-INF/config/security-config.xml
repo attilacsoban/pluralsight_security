@@ -137,7 +137,7 @@
 <!-- 			<access-denied-handler error-page="/403.html"/>	 -->
 <!-- 		</http> -->
 					
-		<!--==================custom login form ======================= 
+		<!--=================using expressions ======================= 
 		using expressions
 		-->			
 <!-- 		<http auto-config="true" use-expressions="true"> -->
@@ -151,8 +151,13 @@
 <!-- 			<access-denied-handler error-page="/403.html"/>	 -->
 <!-- 		</http> -->
 		 
+		 
+		 <!--=================using expressions ======================= 
+		permissions per object or per action on an object, deeper than method level security
+		permissoion evaluator kell
+		-->		
 				
-					
+					 
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/login.html" access="permitAll"/>
 		<intercept-url pattern="/loginFailed.html" access="permitAll"/>

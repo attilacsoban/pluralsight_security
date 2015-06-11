@@ -27,7 +27,14 @@ public class GoalController {
 	}
 	
 	//only adminc cas add golas for example
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	//extend with permission, u have to be an admin and have a permission to create goal!
+	//#goal referens to a gola from @modelattribute, from the form
+	/*
+	 * 	have to create a table in mysql "permissions" with columns username, target, permission
+	 * after that need to create the evaluator in com.pluralsight.security package
+	 * 
+	 * */
+	@PreAuthorize("hasRole('ROLE_ADMIN') and hasPermission(#goal,'createGoal')")
 	@RequestMapping(value = "addGoal", method = RequestMethod.POST)
 	public String updateGoal(@Valid @ModelAttribute("goal") Goal goal, BindingResult result) {
 		

@@ -157,7 +157,8 @@
 		permissoion evaluator kell
 		-->		
 				
-					 
+			<!-- expression hasznalatanal at kell alakitani a statikus IS_AUTHENTICATED_ANONYMOUSLY
+			intercept-url-eket -->		 
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/login.html" access="permitAll"/>
 		<intercept-url pattern="/loginFailed.html" access="permitAll"/>

@@ -20,7 +20,10 @@ public class FitnessPermissionEvaluator implements PermissionEvaluator{
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-
+	
+	//after this servlet confog settings coming 
+	//second level cache el meg lehet oldani, hogy ne minden egyes hivasnal forduljon a bd-hez hanem
+	// cachelje be az adatokat valamilyen szinten
 	public boolean hasPermission(Authentication auth, Object targetDomainOnject, Object permission) {
 		JdbcTemplate template = new JdbcTemplate(dataSource);
 		//makes easy to do some jdbc in this code block
@@ -33,7 +36,7 @@ public class FitnessPermissionEvaluator implements PermissionEvaluator{
 		//if coutn == 1 the it i s valid
 		if(count == 1)
 			return true;
-		
+		 
 		return false;
 	} 
 

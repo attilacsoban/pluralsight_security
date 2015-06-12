@@ -171,7 +171,7 @@
 			user-search-filter="uid={0}" />
 	</authentication-manager>
 	
-	<!-- requires-channel="https" https re forcolja, ha van egy http:// link akkor is https re iraniyt -->
+	<!-- requires-channel="https" https re forcolja, -->
 				 
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/login.html" access="permitAll" requires-channel="https"/>

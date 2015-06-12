@@ -18,7 +18,8 @@
 	<context:component-scan base-package="com.pluralsight"/>
 	
 	<!-- security itt adjuk hozza ezt hogy tudjak hasznalni metodus szintu securityt- emrt 3ezeket
-	leginkabb a controllereknel fogom hasznalni es a cvoontrollereket above configuraltuk -->
+	leginkabb a controllereknel fogom hasznalni es a cvoontrollereket above configuraltuk
+	simple method level auth only needs the first line pre-postanno enabled -->
 	<security:global-method-security pre-post-annotations="enabled" >
 		<!-- permission kiertekelesehez -->
 		<security:expression-handler ref="fitnessExpressionHandler"/>

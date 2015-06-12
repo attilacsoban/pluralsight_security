@@ -26,9 +26,9 @@ public class GoalController {
 		return "addGoal";
 	}
 	
-	//only adminc cas add golas for example
+	//only adminc can add golas for example
 	//extend with permission, u have to be an admin and have a permission to create goal!
-	//#goal referens to a gola from @modelattribute, from the form
+	//#goal referens to a goal from @modelattribute, from the form
 	/*
 	 * 	have to create a table in mysql "permissions" with columns username, target, permission
 	 * after that need to create the evaluator in com.pluralsight.security package

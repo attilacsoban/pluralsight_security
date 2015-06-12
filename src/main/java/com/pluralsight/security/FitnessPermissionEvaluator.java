@@ -30,7 +30,7 @@ public class FitnessPermissionEvaluator implements PermissionEvaluator{
 		//build query
 		int count = template.queryForObject("select count(*) from permissions p where p.username = ? "
 				+ "and p.target = ? and p.permission = ?", args, Integer.class);
-		//if coutn == 1 the it is valid
+		//if coutn == 1 the it i s valid
 		if(count == 1)
 			return true;
 		

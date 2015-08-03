@@ -70,8 +70,7 @@
 		<version>1.1.1</version>
 	</dependency>
 	
-	<!-- mySQL jdbc driver + spring jdbc driver  => storage authentication-hoz-->
-	
+	<!-- mySQL jdbc driver + spring jdbc driver  => storage authentication-hoz-->	
 	<dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>

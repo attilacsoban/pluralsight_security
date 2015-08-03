@@ -95,7 +95,7 @@
 		web.xml servletdispatcher mappingja miatt		
 		-->	
 <!-- 	<http auto-config="true"> -->
-<!-- <intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>allow acces to login.html -->
+<!-- 		<intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>allow acces to login.html -->
 <!-- 		<intercept-url pattern="/**" access="ROLE_USER" /> -->
 <!-- 		<form-login login-page="/login.html"/> -->		
 <!-- 	</http> -->

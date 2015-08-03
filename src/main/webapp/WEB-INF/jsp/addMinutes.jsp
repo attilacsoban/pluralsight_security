@@ -36,7 +36,9 @@
 
 	<script type="text/javascript">
 		$(document).ready(
+				
 			function() {
+				alert("da");
 				$.getJSON('<spring:url value="activities.json"/>', {
 					ajax : 'true'
 				}, function(data){
